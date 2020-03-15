@@ -26,3 +26,17 @@ docker-compose file
 
 if you are going yo use Ubuntu please do the following
 rename docker-compose.yml-ubuntu docker-compose.yml --> note : it will use the Dockerfile
+
+-------------------
+      NOTES        |
+-------------------
+ notes : 
+ - the Maven Goal in this case is install Not package  because install means "deploy":either deploy yor artifact on the artifactory or maven local-artifactory
+ - sonarqube in "Pre-Step" phase to test code quality (Quality Asurance) (QA) & it's configrations:
+sonar.host.url=http://sonarqube:9000
+sonar.projectKey=java-app1
+sonar.sources=./src
+sonar.language=java
+- artifactory configured twice :
+  1- at build Phase : to Resolve artifacts from Artifactory (store building-binaries in the artifactory to increase the latency at building)
+  2- at Post-Build Action : to deploy the artifact in the artifatory 
