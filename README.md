@@ -39,4 +39,4 @@ sonar.sources=./src
 sonar.language=java
 - artifactory configured twice :
   1- at build Phase : to Resolve artifacts from Artifactory (store building-binaries in the artifactory to increase the latency at building)
-  2- at Post-Build Action : to deploy the artifact in the artifatory 
+  <br>2- at Post-Build Action : to deploy the artifact in the artifatory 
